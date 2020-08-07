@@ -1,0 +1,4 @@
+/* 主题自带隐藏按钮 */
+.hide-block>.hide-button.open, .hide-inline>.hide-button.open {
+  display: inline-block;
+}
