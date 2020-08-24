@@ -6,7 +6,7 @@
       font-size: 13px;
   }
   /*切换背景*/
-  #page-header {
+  #page-header.full_page {
       background-image: url(https://cdn.jsdelivr.net/gh/moelody/cdn@latest/album/黒猫_78448695.jpg) !important
   }
 }
