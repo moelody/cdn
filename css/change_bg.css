@@ -4,7 +4,7 @@
 .layout_post>#page,
 .layout_post>#post,
 .read-mode .layout_post>#post {
-  background: var(--light_bg_color)
+  background: var(--light_bg_color,#fff)
 }
 
 [data-theme=dark] #aside_content .card-widget,
@@ -13,7 +13,7 @@
 [data-theme=dark] .layout_post>#page,
 [data-theme=dark] .layout_post>#post,
 [data-theme=dark] .read-mode .layout_post>#post {
-  background-color: var(--dark_bg_color)
+  background-color: var(--dark_bg_color,#121212)
 }
 
 [data-theme=dark] #page-header.full_page {
