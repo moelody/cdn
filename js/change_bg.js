@@ -4,15 +4,14 @@
   let web_bg = document.getElementById("web_bg");
   // 公共父级
   let content_inner = document.getElementById("content-inner");
-  // 获取Cookies
   // 透明度
-  let opacity = Cookies.get("opacity") || 0.7;
+  let opacity = saveToLocal.get("opacity") || 0.7;
   // 背景
-  let bg = Cookies.get("bg");
+  let bg = saveToLocal.get("bg");
   // 动画
-  let animation = Cookies.get("animation");
+  let animation = saveToLocal.get("animation");
   // 背景类型
-  let type = Cookies.get("type");
+  let type = saveToLocal.get("type");
   // 声明遍历 用于记录当前color
   // 设置背景
   if (bg) {
