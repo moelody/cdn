@@ -886,7 +886,16 @@
     root: '/calendar/'
   };
   $(document).ready(function () {
-    $('#calendar').aCalendar('zh-CN');//'zh-CN'请根据自己博客的语言选择
+    var lang = 'zh-CN';
+    var doclang = '';
+    try{
+      doclang = JSON.parse($('html').attr('lang'))[0];
+    } catch(e) {
+      doclang = $('html').attr('lang');
+    }
+    if (calLanguages.hasOwnProperty(doclang))
+    lang = doclang;
+    $('#calendar').aCalendar(lang);//'zh-CN'请根据自己博客的语言选择
 });
 
 }(jQuery));
