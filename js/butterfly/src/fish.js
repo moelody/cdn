@@ -334,10 +334,9 @@
   $('#footer-wrap').css({
     position: 'absolute',
     'text-align': 'center',
-    top: 0,
     right: 0,
     left: 0,
-    bottom: 0
+    padding: '20px 0 0 0'
   });
   $('footer').append('<div class="container" id="jsi-flying-fish-container" style="display:flex;overflow:hidden"></div>');
   $(function () {
