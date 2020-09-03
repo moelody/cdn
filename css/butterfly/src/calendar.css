@@ -95,8 +95,12 @@
 }
 
 .cal tbody .cal-today {
-  background-color: #66ecfd;
+  background-color: var(--btn-bg);
   color: #fff;
+}
+
+.cal tbody .cal-today:hover {
+  background-color: var(--btn-hover-color);
 }
 
 .cal .cal-gray {
