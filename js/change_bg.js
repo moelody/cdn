@@ -1,31 +1,28 @@
 (function () {
-  // 获取标签
-  // 全局背景div
-  let web_bg = document.getElementById("web_bg");
-  // 公共父级
-  let content_inner = document.getElementById("content-inner");
-  // 透明度
-  let opacity = saveToLocal.get("opacity") || 0.7;
-  // 背景
-  let bg = saveToLocal.get("bg");
-  // 动画
-  let animation = saveToLocal.get("animation");
-  // 背景类型
-  let type = saveToLocal.get("type");
-  // 声明遍历 用于记录当前color
-  // 设置背景
-  if (bg) {
-    web_bg.style.background = bg;
+
+  if (saveToLocal.get("bg")) {
+  
+    let web_bg = document.getElementById("web_bg");
+    let animation = saveToLocal.get("animation");
+    let type = saveToLocal.get("type");
+  
+    web_bg.style.background = saveToLocal.get("bg");
     web_bg.setAttribute("data-type", type);
     if (animation) {
       web_bg.style.animation = animation;
     }
   }
-  function setColor(opacity) {
-    // style="--light_bg_color: rgb(255, 255, 255,.3);--dark_bg_color: rgba(18,18,18,.2);"
-    let light_bg_color = "--light_bg_color: rgb(255, 255, 255," + opacity + ");";
-    let dark_bg_color = "--dark_bg_color: rgba(18,18,18," + opacity + ");";
-    content_inner.setAttribute("style", light_bg_color + dark_bg_color);
+  
+  const cardStyle = document.createElement('style');
+  cardStyle.innerHTML = `
+  [data-theme=light] {
+    --card-bg: rgb(255, 255, 255, ${saveToLocal.get("opacity") || 0.7});
   }
-  setColor(opacity);
-})();
+  [data-theme=dark] {
+    --card-bg: rgb(18, 18, 18, ${saveToLocal.get("opacity") || 0.7});
+  }
+  `;
+  document.head.appendChild(cardStyle);
+  
+  })();
+  
