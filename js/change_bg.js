@@ -16,10 +16,10 @@
   const cardStyle = document.createElement('style');
   cardStyle.innerHTML = `
   [data-theme=light] {
-    --card-bg: rgb(255, 255, 255, ${saveToLocal.get("opacity") || 0.7});
+    --card-bg: rgb(255, 255, 255, ${saveToLocal.get("opacity") || 0.9});
   }
   [data-theme=dark] {
-    --card-bg: rgb(18, 18, 18, ${saveToLocal.get("opacity") || 0.7});
+    --card-bg: rgb(18, 18, 18, ${saveToLocal.get("opacity") || 0.9});
   }
   `;
   document.head.appendChild(cardStyle);

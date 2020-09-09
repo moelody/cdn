@@ -1,4 +1,4 @@
-/*! Generate by Moelody. Wed Sep  9 16:22:14 2020*/
+/*! Generate by Moelody. Wed Sep  9 16:53:33 2020*/
 (function(p){p.fn.circleMagic=function(t){var o,a,n,r,e=!0,i=[],d=p.extend({color:"rgba(255,0,0,.5)",radius:10,density:0.3,clearOffset:0.2},t),l=this[0];function c(){e=!(document.body.scrollTop>a);}
 function s(){(o=l.clientWidth),(a=l.clientHeight),(l.height=a+"px"),(n.width=o),(n.height=a);}
 function h(){if(e)for(var t in(r.clearRect(0,0,o,a),i))i[t].draw();requestAnimationFrame(h);}
@@ -46,8 +46,8 @@ cBody.append(cWeekHead);cBody.append(cFoot);cBody.append(cMainPad);$(instance).h
 return draw();};$.fn.aCalendar=function(Lang,oInit){return this.each(function(){return aCalendar(Lang,oInit,$(this));});};$.fn.aCalendar.defaults={months:['January','February','March','April','May','June','July','August','September','October','November','December'],dayOfWeekShort:['S','M','T','W','T','F','S'],dayOfWeek:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],postsMonthTip:'Posts published in LMM yyyy',titleFormat:'yyyy LMM',titleLinkFormat:'/archives/yyyy/MM/',headArrows:{previous:'<span class="cal-prev"></span>',next:'<span class="cal-next"></span>'},footArrows:{previous:'« ',next:' »'},weekOffset:0,single:true,root:'/calendar/'};$(document).ready(function(){var lang='zh-CN';var doclang='';try{doclang=JSON.parse($('html').attr('lang'))[0];}catch(e){doclang=$('html').attr('lang');}
 if(calLanguages.hasOwnProperty(doclang))
 lang=doclang;$('#calendar').aCalendar(lang);});}(jQuery));(function(){if(saveToLocal.get("bg")){let web_bg=document.getElementById("web_bg");let animation=saveToLocal.get("animation");let type=saveToLocal.get("type");web_bg.style.background=saveToLocal.get("bg");web_bg.setAttribute("data-type",type);if(animation){web_bg.style.animation=animation;}}
-const cardStyle=document.createElement('style');cardStyle.innerHTML=`[data-theme=light]{--card-bg:rgb(255,255,255,${saveToLocal.get("opacity")||0.7});}
-[data-theme=dark]{--card-bg:rgb(18,18,18,${saveToLocal.get("opacity")||0.7});}`;document.head.appendChild(cardStyle);})();(function(){$(document).ready(function(e){$(".copyright").html('©2020 <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fas fa-heartbeat"></i> Moelody');});})();/*!
+const cardStyle=document.createElement('style');cardStyle.innerHTML=`[data-theme=light]{--card-bg:rgb(255,255,255,${saveToLocal.get("opacity")||0.9});}
+[data-theme=dark]{--card-bg:rgb(18,18,18,${saveToLocal.get("opacity")||0.9});}`;document.head.appendChild(cardStyle);})();(function(){$(document).ready(function(e){$(".copyright").html('©2020 <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fas fa-heartbeat"></i> Moelody');});})();/*!
  * online
  * Copyright(c) 2016 luojia <luojia@luojia.me>
  * MIT Licensed
