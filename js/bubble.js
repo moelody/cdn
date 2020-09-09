@@ -66,6 +66,7 @@
           (t.id = "canvas"),
             (t.style.top = 0),
             (t.style.zIndex = 0),
+            (t.style.pointerEvents = "none"),
             (t.style.position = "absolute"),
             l.appendChild(t),
             (t.parentElement.style.overflow = "hidden");

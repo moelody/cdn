@@ -3,7 +3,7 @@
  * Copyright(c) 2016 luojia <luojia@luojia.me>
  * MIT Licensed
  */
-if (!Online) {
+if (typeof Online == "undefined") {
   class Online {
     constructor(addr) {
       this.addr = addr;
