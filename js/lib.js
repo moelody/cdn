@@ -1,4 +1,4 @@
-/*! Generate by Moelody. Wed Sep  9 16:53:33 2020*/
+/*! Generate by Moelody. Thu Sep 10 15:06:02 2020*/
 (function(p){p.fn.circleMagic=function(t){var o,a,n,r,e=!0,i=[],d=p.extend({color:"rgba(255,0,0,.5)",radius:10,density:0.3,clearOffset:0.2},t),l=this[0];function c(){e=!(document.body.scrollTop>a);}
 function s(){(o=l.clientWidth),(a=l.clientHeight),(l.height=a+"px"),(n.width=o),(n.height=a);}
 function h(){if(e)for(var t in(r.clearRect(0,0,o,a),i))i[t].draw();requestAnimationFrame(h);}
@@ -47,27 +47,4 @@ return draw();};$.fn.aCalendar=function(Lang,oInit){return this.each(function(){
 if(calLanguages.hasOwnProperty(doclang))
 lang=doclang;$('#calendar').aCalendar(lang);});}(jQuery));(function(){if(saveToLocal.get("bg")){let web_bg=document.getElementById("web_bg");let animation=saveToLocal.get("animation");let type=saveToLocal.get("type");web_bg.style.background=saveToLocal.get("bg");web_bg.setAttribute("data-type",type);if(animation){web_bg.style.animation=animation;}}
 const cardStyle=document.createElement('style');cardStyle.innerHTML=`[data-theme=light]{--card-bg:rgb(255,255,255,${saveToLocal.get("opacity")||0.9});}
-[data-theme=dark]{--card-bg:rgb(18,18,18,${saveToLocal.get("opacity")||0.9});}`;document.head.appendChild(cardStyle);})();(function(){$(document).ready(function(e){$(".copyright").html('©2020 <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fas fa-heartbeat"></i> Moelody');});})();/*!
- * online
- * Copyright(c) 2016 luojia <luojia@luojia.me>
- * MIT Licensed
- */
-if(typeof Online=="undefined"){class Online{constructor(addr){this.addr=addr;this.groups=new Set();this.on=false;this.waiting=false;this.onOnlineChange=null;this.pinger=setInterval(()=>{this.opened&&this.ws.send('');},20000);this.user=`${conv(Date.now(),10,62)}-${randomUser()}`;this.ws=null;if(window.localStorage){var user=localStorage.getItem('online_user');if(!user)localStorage.setItem('online_user',this.user);else{this.user=user;}}
-if(addr){this.on=true;this.connet();}}
-get opened(){return this.ws&&this.ws.readyState===1;}
-enter(name){if(typeof name!=='string')throw('name is not a string:'+name);this.groups.add(name);if(this.opened)
-this.ws.send(JSON.stringify({_:'enter',g:name,u:this.user}));return this;}
-leave(name){if(typeof name!=='string')throw('name is not a string:'+name);if(this.opened&&this.groups.delete(name)){this.ws.send(JSON.stringify({_:'leave',g:name}));}
-return this;}
-leaveAll(){if(this.opened)
-for(let g of this.groups)this.leave(g);return this;}
-_report(data){this.onOnlineChange&&this.onOnlineChange(data);}
-connet(addr){this.waiting=false;if(addr)this.addr=addr;if(this.on===false)return;if(this.opened)return;let ws=this.ws=new WebSocket(this.addr);ws.onmessage=m=>{if(m.data==='connected'){for(let g of this.groups)this.enter(g);return;}
-let msg=JSON.parse(m.data);switch(msg._){case'ol':{msg.c=parseInt(msg.c,32);msg.u=parseInt(msg.u,32);this._report(msg);break;}}};ws.onclose=e=>{if(this.waiting)return;for(let g of this.groups)this._report({g:g,c:0,u:0});this.waiting=true;setTimeout(()=>{this.connet()},5000);};ws.onerror=e=>{ws.onclose();};return this;}
-close(){this.on=false;this.ws.close();clearInterval(this.pinger);}}}
-function randomUser(){return conv(Math.round(99999999*Math.random()),10,62);}
-function conv(n,o,t,olist,tlist){var dlist='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',tnum=[],m,negative=((n+='').trim()[0]=='-'),decnum=0;olist||(olist=dlist);tlist||(tlist=dlist);if(negative)n=n.slice(1);for(var i=n.length;i--;)
-decnum+=olist.indexOf(n[i])*Math.pow(o,n.length-i-1);for(;decnum!=0;tnum.unshift(tlist[m])){m=decnum%t;decnum=Math.floor(decnum/t);}
-decnum&&tnum.unshift(tlist[decnum]);return(negative?'-':'')+tnum.join('');}
-function isMobile(){return window.screen.width<767&&/iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g.test(navigator.userAgent);}
-(function(){if(!isMobile()){var ol=new Online('wss://api.diygod.me/online/');ol.enter(document.domain);ol.onOnlineChange=function(data){let onlineEle=document.getElementById('online-count');if(onlineEle){onlineEle.innerHTML=data.u;}else{document.getElementById('menus').insertAdjacentHTML('afterbegin',`<div id="menu_online"style="display:inline;"><a class="site-page"data-pjax-state><span id="online-count">${data.u}</span>人在线</a></div>`);}}}})()(function(){let OriginTitle=document.title;let titleTime;document.addEventListener("visibilitychange",function(){if(document.hidden){$('[rel="icon"]').attr("href","/img/favicon.ico");document.title="不要看我！！";clearTimeout(titleTime);}else{$('[rel="icon"]').attr("href","/img/favicon.ico");document.title="(*´∇｀*) 呀~"+OriginTitle;titleTime=setTimeout(function(){document.title=OriginTitle;},2000);}});})();
+[data-theme=dark]{--card-bg:rgb(18,18,18,${saveToLocal.get("opacity")||0.9});}`;document.head.appendChild(cardStyle);})();(function(){$(document).ready(function(e){$(".copyright").html('©2020 <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fas fa-heartbeat"></i> Moelody');});})();(function(){let OriginTitle=document.title;let titleTime;document.addEventListener("visibilitychange",function(){if(document.hidden){$('[rel="icon"]').attr("href","/img/favicon.ico");document.title="不要看我！！";clearTimeout(titleTime);}else{$('[rel="icon"]').attr("href","/img/favicon.ico");document.title="(*´∇｀*) 呀~"+OriginTitle;titleTime=setTimeout(function(){document.title=OriginTitle;},2000);}});})();

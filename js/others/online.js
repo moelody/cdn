@@ -3,7 +3,8 @@
  * Copyright(c) 2016 luojia <luojia@luojia.me>
  * MIT Licensed
  */
-if (typeof Online == "undefined") {
+
+(function () {
   class Online {
     constructor(addr) {
       this.addr = addr;
@@ -104,36 +105,29 @@ if (typeof Online == "undefined") {
       clearInterval(this.pinger);
     }
   }
-}
-
-function randomUser() {
-  return conv(Math.round(99999999 * Math.random()), 10, 62);
-}
-
-//gist: https://gist.coding.net/u/luojia/c33a7e50d9634a1d9084ebd71c468114/
-function conv(n, o, t, olist, tlist) { //数,原进制,目标进制[,原数所用字符表,目标字符表]
-  var dlist = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    tnum = [],
-    m, negative = ((n += '').trim()[0] == '-'),
-    decnum = 0;
-  olist || (olist = dlist);
-  tlist || (tlist = dlist);
-  if (negative) n = n.slice(1);
-  for (var i = n.length; i--;)
-    decnum += olist.indexOf(n[i]) * Math.pow(o, n.length - i - 1);
-  for (; decnum != 0; tnum.unshift(tlist[m])) {
-    m = decnum % t;
-    decnum = Math.floor(decnum / t);
+  function randomUser() {
+    return conv(Math.round(99999999 * Math.random()), 10, 62);
   }
-  decnum && tnum.unshift(tlist[decnum]);
-  return (negative ? '-' : '') + tnum.join('');
-}
-
-function isMobile() {
-  return window.screen.width < 767 && /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g.test(navigator.userAgent);
-}
-
-(function () {
+  function conv(n, o, t, olist, tlist) {
+    var dlist = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+      tnum = [],
+      m, negative = ((n += '').trim()[0] == '-'),
+      decnum = 0;
+    olist || (olist = dlist);
+    tlist || (tlist = dlist);
+    if (negative) n = n.slice(1);
+    for (var i = n.length; i--;)
+      decnum += olist.indexOf(n[i]) * Math.pow(o, n.length - i - 1);
+    for (; decnum != 0; tnum.unshift(tlist[m])) {
+      m = decnum % t;
+      decnum = Math.floor(decnum / t);
+    }
+    decnum && tnum.unshift(tlist[decnum]);
+    return (negative ? '-' : '') + tnum.join('');
+  }
+  function isMobile() {
+    return window.screen.width < 767 && /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g.test(navigator.userAgent);
+  }
   if (!isMobile()) {
     var ol = new Online('wss://api.diygod.me/online/');
     ol.enter(document.domain);
