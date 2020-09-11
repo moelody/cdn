@@ -1,0 +1,51 @@
+.fa-fw.fas.fa-home {
+  animation: wrench 2.5s ease infinite;
+}
+.fas.fa-folder-open {
+  animation: tada 2s linear infinite;
+}
+.fas.fa-history {
+  animation: spin 1.5s linear infinite;
+}
+.fas.fa-tags {
+  animation: vertical 2s ease infinite;
+}
+.fas.fa-bolt {
+  animation: flash 2s ease infinite;
+}
+.fas.fa-image {
+  animation: pulse 2s linear infinite;
+}
+.fas.fa-calendar-alt {
+  animation: pulse 2s linear infinite;
+}
+.fas.fa-archive {
+  animation: float 2s linear infinite;
+}
+.fas.fa-chart-line {
+  animation: falling 2s linear infinite;
+}
+#aside_content .fas.fa-folder-open {
+  color: rgba(107, 72, 255, 1);
+}
+#aside_content .fas.fa-history {
+  color: #ff82bb;
+}
+#aside_content .fas.fa-tags {
+  color: rgba(13, 63, 103, 1);
+}
+#aside_content .fas.fa-bolt {
+  color: rgb(144,19,254);
+}
+#aside_content .fas.fa-image {
+  color: rgb(248,231,28);
+}
+#aside_content .fas.fa-calendar-alt {
+  color: rgb(74,144,226);
+}
+#aside_content .fas.fa-archive {
+  color: rgb(126,211,33);
+}
+#aside_content .fas.fa-chart-line {
+  color: rgb(139,87,42);
+}
